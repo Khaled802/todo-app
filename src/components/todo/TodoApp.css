@@ -1,3 +1,62 @@
 /* label, input {
     margin: 10px;
 } */
+
+/* styles.css */
+
+/* Style the outer container of the date picker */
+.react-datepicker-wrapper {
+    display: inline-block;
+  }
+  
+  /* Style the input field */
+  .react-datepicker__input-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Style the calendar pop-up */
+  .react-datepicker-popper {
+    z-index: 1; /* Adjust the z-index as needed */
+  }
+  
+  /* Style the calendar itself */
+  .react-datepicker {
+    font-family: 'Arial', sans-serif;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style the header of the calendar */
+  .react-datepicker__header {
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+  }
+  
+  /* Style the month and year in the header */
+  .react-datepicker__current-month,
+  .react-datepicker__current-year {
+    color: #333;
+  }
+  
+  /* Style the days of the week */
+  .react-datepicker__day-name,
+  .react-datepicker__day {
+    width: 30px;
+    line-height: 30px;
+    margin: 2px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  /* Style the selected day */
+  .react-datepicker__day--selected {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Style the today's date */
+  .react-datepicker__day--today {
+    font-weight: bold;
+  }

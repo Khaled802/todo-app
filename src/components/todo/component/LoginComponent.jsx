@@ -11,8 +11,8 @@ export default function LoginComponent() {
 
     const { authenticate } = useAuthContext();
 
-    function loginAction() {
-        const isLogged = authenticate(username, password);
+    async function loginAction() {
+        const isLogged = await authenticate(username, password)
 
         if (!isLogged) 
             return setFailedLogin(true);
@@ -21,15 +21,16 @@ export default function LoginComponent() {
     }
 
     return (
-        <div className="loginComponent">
+        <div className="loginComponent container">
             <h1> Login </h1>
-            <div className="loginForm container">
+            <form className="loginForm form">
 
                 {failedLogin && <h4> Wrong Login </h4>}
 
-                <div className="container">
-                    <label htmlFor="username"> Username: </label>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="username"> Username: </label>
                     <input
+                        className="form-control"
                         type="text"
                         name="username"
                         id="username"
@@ -37,9 +38,10 @@ export default function LoginComponent() {
                         onChange={event => setUsername(event.target.value)}
                     />
                 </div>
-                <div>
-                    <label htmlFor="passoword"> Passoword: </label>
+                <div className="mb-3">
+                    <label className="form-label" htmlFor="passoword"> Passoword: </label>
                     <input
+                        className="form-control"
                         type="password"
                         name="password"
                         id="password"
@@ -47,10 +49,10 @@ export default function LoginComponent() {
                         onChange={event => setPassword(event.target.value)}
                     />
                 </div>
-                <div>
-                    <button type="button" onClick={loginAction}> Login </button>
+                <div className="d-grid gap-2">
+                    <button type="button" onClick={loginAction} className="btn btn-primary"> Login </button>
                 </div>
-            </div>
+            </form>
         </div>
     );
 }
